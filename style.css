@@ -1,0 +1,167 @@
+
+/* Colour Variables */
+
+:root{
+    --darkgrey: rgb(30, 30, 30);
+    --mediumgrey: rgb(60, 60, 60);
+    --lightblue: rgb(201, 247, 255);
+    --mediumblue:rgb(141, 238, 255);
+}
+
+/* General */
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    color: var(--darkgrey);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover{
+    color: var(--mediumgrey);
+}
+
+body{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.center-text{
+    text-align: center;
+}
+
+.content{
+    margin: 50px;
+}
+
+button{
+    background-color: var(--darkgrey);
+    color: var(--lightblue);
+    border: solid transparent 1px;
+    border-radius: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+#home-button:hover{
+    background-color: var(--mediumgrey);
+}
+
+header{
+    background-color: var(--darkgrey);
+    color: var(--lightblue);
+    height: 100px;
+    line-height: 100px;
+    width: 100%;
+}
+
+#header-home-link{
+    color:var(--mediumblue)
+}
+
+#header-home-link:hover{
+    color: var(--lightblue);
+}
+
+footer{
+    background-color: var(--darkgrey);
+    color: var(--lightblue);
+    padding: 20px;
+    width: 100%;
+    bottom:0;
+    left:0;
+    right:0;
+}
+
+ /* Index Region Tabs to Visit Maps */
+
+ .region-tab{
+    background-color: var(--darkgrey);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--lightblue);
+    padding: 20px;
+    -webkit-text-stroke: 1px var(--darkgrey);
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    height: 300px;
+    line-height: 300px;
+    width: 100%;
+    cursor: pointer;
+}
+
+#africa-tab{
+    /* Photo credit: https://unsplash.com/photos/T-LfvX-7IVg */
+    background-image: url("images/africa.jpg");  
+}
+
+#asia-tab{
+    /* Photo credit: https://unsplash.com/photos/9bdt03k4ujw */
+    background-image: url("images/asia.jpg");
+}
+
+#northern-america-tab{
+    /* Photo credit: https://unsplash.com/photos/qQC8tyG_JVA */
+    background-image: url("images/northern-america.jpg");
+}
+
+#central-america-tab{
+    /* Photo credit: https://unsplash.com/photos/0LmAVugy02A */
+    background-image: url("images/central-america.jpg");
+}
+
+#south-america-tab{
+    /* Photo credit: https://unsplash.com/photos/rFESpq5MMTg */
+    background-image: url("images/south-america.jpg");
+}
+
+#caribbean-tab{
+    /* Photo credit: https://unsplash.com/photos/YiHqFhJOvA4 */
+    background-image: url("images/caribbean.jpg");
+}
+
+#europe-tab{
+    /* Photo credit: https://unsplash.com/photos/tn2rBnvIl9I */
+    background-image: url("images/europe.jpg");
+}
+
+#oceania-tab{
+    /* Photo credit: https://unsplash.com/photos/TLxTFr9AoO0 */
+    background-image: url("images/oceania.jpg");
+}
+
+#africa-tab:hover, #asia-tab:hover, #northern-america-tab:hover, #central-america-tab:hover,
+#south-america-tab:hover, #caribbean-tab:hover, #europe-tab:hover, #oceania-tab:hover{
+    background-image: none;
+}
+
+/* Map Settings */
+
+.map{
+    margin: auto;
+    height: 433px;
+    width: 700px;
+}
+
+/* ISO Legend */
+
+.iso-code{
+    font-weight: 900;
+}
+
+#iso-legend{
+    display: block;
+    border: solid var(--darkgrey) 1px;
+    border-radius: 20px;
+    margin: auto;
+    padding: 20px;
+    width: 700px;
+}

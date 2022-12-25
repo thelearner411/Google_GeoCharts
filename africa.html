@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='images/globe-icon.ico'/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Map of Africa</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['Algeria'],
+          ['Angola'],
+          ['Benin'],
+          ['Botswana'],
+          ['Burkina Faso'],
+          ['Burundi'],
+          ['Cameroon'],
+          ['Cape Verde'],
+          ['Central African Republic'],
+          ['Ceuta'],
+          ['Chad'],
+          ['Comoros'],
+          ['CG'], // Congo
+          ['CD'], // Democratic Republic of the Congo
+          ['Djibouti'],
+          ['Egypt'],
+          ['Equatorial Guinea'],
+          ['Eritrea'],
+          ['Eswatini'],
+          ['Ethiopia'],
+          ['Gabon'],
+          ['Ghana'],
+          ['Guinea'],
+          ['Guinea-Bissau'],
+          ['Ivory Coast'],
+          ['Kenya'],
+          ['Lesotho'],
+          ['Liberia'],
+          ['Libya'],
+          ['Madagascar'],
+          ['Madeira'],
+          ['Malawi'],
+          ['Mali'],
+          ['Mauritania'],
+          ['Mauritius'],
+          ['Morocco'],
+          ['Mozambique'],
+          ['Namibia'],
+          ['Niger'],
+          ['Nigeria'],
+          ['Rwanda'],
+          ['Congo'],
+          ['Reunion'],
+          ['São Tomé and Principe'],
+          ['Senegal'],
+          ['Seychelles'],
+          ['Sierra Leone'],
+          ['Somalia'],
+          ['South Africa'],
+          ['SS'], // South Sudan
+          ['Sudan'],
+          ['Swaziland'],
+          ['Tanzania'],
+          ['Togo'],
+          ['Tunisia'],
+          ['Uganda'],
+          ['Western Sahara'],
+          ['Zambia'],
+          ['Zimbabwe'],
+        ]);
+
+        var options = {
+            region: '002', //Africa
+            backgroundColor: '#c9f7ff',
+            datalessRegionColor: '#e6e6e6',
+            defaultColor: '#6dc794',
+            tooltip:{
+                textStyle:{
+                color: 'black',
+                fontName: 'Courier New'
+            }
+            }
+        };
+
+        var africanMap = new google.visualization.GeoChart(document.getElementById('african-map'));
+
+        africanMap.draw(data, options);
+      }
+    </script>
+
+</head>
+<header>
+
+  <a href="index.html" id="header-home-link"><h1 class="center-text">MAPS OF THE WORLD</h1></a><br>
+
+</header>
+<body onload="setDefaults()">
+    <div class="content">
+
+        <a href="index.html"><button id="home-button">
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>&nbsp;Back to Home
+        </button><br><br></a>
+
+        <h1 class="center-text">Africa</h1><br>
+
+        <div id="african-map" class="map"></div><br><br>
+
+        <div id="iso-legend">
+
+          <h3>ISO Legend</h3><br>
+
+          <span class="iso-code">CD: </span><span class="country-name">Democratic Republic of the Congo</span><br>
+          <span class="iso-code">CG: </span><span class="country-name">Congo</span><br>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<footer>
+
+    <p id="footer-year" class="center-text"></p>
+
+  </footer>
+   
+</html>

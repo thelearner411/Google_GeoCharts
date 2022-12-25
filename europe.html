@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='images/globe-icon.ico'/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Map of Europe</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['Albania'],
+          ['Austria'],
+          ['Belgium'],
+          ['Belarus'],
+          ['Bosnia and Herzegovina'],
+          ['Bulgaria'],
+          ['Croatia'],
+          ['Cyprus'],
+          ['Czech Republic'],
+          ['Denmark'],
+          ['Estonia'],
+          ['Faroe Islands'],
+          ['Finland'],
+          ['France'],
+          ['Germany'],
+          ['Greece'],
+          ['Hungary'],
+          ['Iceland'],
+          ['Ireland'],
+          ['Italy'],
+          ['Isle of Man'],
+          ['XK'], // Kosovo
+          ['Latvia'],
+          ['Lithuania'],
+          ['Luxembourg'],
+          ['Malta'],
+          ['Moldova'],
+          ['Monaco'],
+          ['Montenegro'],
+          ['Netherlands'],
+          ['Macedonia'],
+          ['Northern Ireland'],
+          ['Norway'],
+          ['Poland'],
+          ['Portugal'],
+          ['Romania'],
+          ['Russia'],
+          ['San Marino'],
+          ['Serbia'],
+          ['Slovakia'],
+          ['Slovenia'],
+          ['Spain'],
+          ['Sweden'],
+          ['Switzerland'],
+          ['Turkey'],
+          ['Ukraine'],
+          ['United Kingdom']
+        ]);
+
+        var options = {
+            region: '150', // Europe
+            resolution: 'countries',
+            backgroundColor: '#c9f7ff',
+            datalessRegionColor: '#e6e6e6',
+            defaultColor: '#6dc794',
+            tooltip:{
+              showColorCode: false,
+                textStyle:{
+                color: 'black',
+                fontName: 'Courier New',
+            }
+            }
+        };
+
+        var europeanMap = new google.visualization.GeoChart(document.getElementById('european-map'));
+
+        europeanMap.draw(data, options);
+      }
+    </script>
+
+</head>
+<header>
+
+  <a href="index.html" id="header-home-link"><h1 class="center-text">MAPS OF THE WORLD</h1></a><br>
+
+</header>
+<body onload="setDefaults()">
+    <div class="content">
+
+        <a href="index.html"><button id="home-button">
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>&nbsp;Back to Home
+        </button><br><br></a>
+
+        <h1 class="center-text">Europe</h1><br>
+
+        <div id="european-map" class="map"></div><br><br>
+
+        <div id="iso-legend">
+
+          <h3>ISO Legend</h3><br>
+
+          <span class="iso-code">XK: </span><span class="country-name">Kosovo</span><br>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<footer>
+
+    <p id="footer-year" class="center-text"></p>
+
+  </footer>
+   
+</html>

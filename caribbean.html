@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='images/globe-icon.ico'/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Map of the Caribbean</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['Anguilla'],
+          ['Antigua and Barbuda'],
+          ['Aruba'],
+          ['Bahamas'],
+          ['Barbados'],
+          ['BQ'], // Bonaire, Sint Eustatius and Saba
+          ['British Virgin Islands'],
+          ['Cayman Islands'],
+          ['Cuba'],
+          ['CW'], // Curaçao
+          ['Dominica'],
+          ['Dominican Republic'],
+          ['Grenada'],
+          ['Guadeloupe'],
+          ['Haiti'],
+          ['Jamaica'],
+          ['Martinique'],
+          ['Montserrat'],
+          ['Puerto Rico'],
+          ['BL'], // 'Saint Barthélemy'
+          ['Saint Kitts and Nevis'],
+          ['Saint Lucia'],
+          ['MF'], // Saint Martin (French part)
+          ['Saint Vincent and the Grenadines'],
+          ['SX'], // Sint Maarten
+          ['Trinidad and Tobago'],
+          ['Turks and Caicos Islands'],
+          ['U.S. Virgin Islands']
+        ]);
+
+        var options = {
+            region: '029', // The Caribbean
+            resolution: 'countries',
+            colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+            backgroundColor: '#c9f7ff',
+            datalessRegionColor: '#e6e6e6',
+            defaultColor: '#6dc794',
+            tooltip:{
+              showColorCode: false,
+                textStyle:{
+                color: 'black',
+                fontName: 'Courier New',
+                isHtml: true
+            }
+            }
+        };
+
+        var caribbeanMap = new google.visualization.GeoChart(document.getElementById('caribbean-map'));
+
+        caribbeanMap.draw(data, options);
+      }
+    </script>
+
+</head>
+<header>
+
+  <a href="index.html" id="header-home-link"><h1 class="center-text">MAPS OF THE WORLD</h1></a><br>
+
+</header>
+<body onload="setDefaults()">
+    <div class="content">
+
+        <a href="index.html"><button id="home-button">
+          <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>&nbsp;Back to Home
+        </button><br><br></a>
+
+        <h1 class="center-text">The Caribbean</h1><br>
+
+        <div id="caribbean-map" class="map"></div><br><br>
+
+        <div id="iso-legend">
+
+          <h3>ISO Legend</h3><br>
+
+          <span class="iso-code">BL: </span><span class="country-name">Saint Barthélemy</span><br>
+          <span class="iso-code">BQ: </span><span class="country-name">Bonaire, Sint Eustatius and Saba</span><br>
+          <span class="iso-code">CW: </span><span class="country-name">Curaçao</span><br>
+          <span class="iso-code">MF: </span><span class="country-name">Saint Martin (French Part)</span><br>
+          <span class="iso-code">SX: </span><span class="country-name">Sint Maarten</span><br>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<footer>
+
+    <p id="footer-year" class="center-text"></p>
+
+  </footer>
+   
+</html>

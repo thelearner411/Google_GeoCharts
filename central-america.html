@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='icon' type='image/x-icon' href='images/globe-icon.ico'/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>Map of Central America</title>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+          ['Country'],
+          ['Costa Rica'],
+          ['Belize'],
+          ['El Salvador'],
+          ['Guatemala'],
+          ['Honduras'],
+          ['Mexico'],
+          ['Nicaragua'],
+          ['Panama']
+        ]);
+
+        var options = {
+            region: '013', // Central America
+            resolution: 'countries',
+            colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+            backgroundColor: '#c9f7ff',
+            datalessRegionColor: '#e6e6e6',
+            defaultColor: '#6dc794',
+            tooltip:{
+              showColorCode: false,
+                textStyle:{
+                color: 'black',
+                fontName: 'Courier New',
+                isHtml: true
+            }
+            }
+        };
+
+        var centralAmericanMap = new google.visualization.GeoChart(document.getElementById('central-american-map'));
+
+        centralAmericanMap.draw(data, options);
+      }
+    </script>
+
+</head>
+<header>
+
+  <a href="index.html" id="header-home-link"><h1 class="center-text">MAPS OF THE WORLD</h1></a><br>
+
+</header>
+<body onload="setDefaults()">
+    <div class="content">
+
+      <a href="index.html"><button id="home-button">
+        <span><i class="fa fa-arrow-left" aria-hidden="true"></i></span>&nbsp;Back to Home
+      </button><br><br></a>
+
+        <h1 class="center-text">Central America</h1><br>
+
+        <div id="central-american-map" class="map"></div>
+
+    </div>
+    
+</body>
+
+<footer>
+
+    <p id="footer-year" class="center-text"></p>
+
+  </footer>
+   
+</html>
